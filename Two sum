@@ -1,0 +1,23 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        pre_sum={}
+
+        i=0
+
+        n=len(nums)
+        ans=[]
+
+        while(i<n):
+            rem=target-nums[i]
+
+            if rem in pre_sum:
+                ans.append(pre_sum[rem])
+                ans.append(i)
+                return ans
+
+            pre_sum[nums[i]]=i
+            i+=1
+
+        return ans
+
+        
