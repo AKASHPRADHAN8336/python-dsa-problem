@@ -1,0 +1,60 @@
+class Solution:
+    def longestSubarray(self, arr, k):  
+        # code here
+        
+        
+        left=0
+        right=0
+        sum=0
+        max_len=0
+        
+        n=len(arr)
+        
+        # while(right<n):
+            
+        #     sum+=arr[right]
+             
+        #     while(left<=right and sum>k):
+        #          sum-=arr[left]
+        #          left+=1
+                 
+             
+        #     if sum==k:
+        #         max_len=max(max_len,right-left+1)
+             
+             
+            
+        #     right+=1
+            
+            
+            
+            
+        # return max_len
+        
+        pre_sum_map={}
+        
+        
+        
+        
+        while(right<n):
+            sum+=arr[right]
+            
+            if sum==k:
+                max_len=right+1
+                
+                
+            rem=sum-k
+            if rem in pre_sum_map:
+                length=right-pre_sum_map[rem]
+                max_len=max(length,max_len)
+                
+            if sum not in pre_sum_map:
+                pre_sum_map[sum]=right
+                
+            right+=1
+            
+            
+        return max_len
+                
+                
+            
