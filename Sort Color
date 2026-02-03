@@ -1,0 +1,30 @@
+class Solution(object):
+
+
+    def swap(self, nums, start,end):
+        temp=nums[start]
+        nums[start]=nums[end]
+        nums[end]=temp
+
+    def sortColors(self, nums):
+        one=0
+        two=len(nums)-1
+        zero=0
+
+
+        while(one<=two):
+            if nums[one] == 0:
+                self.swap(nums,zero,one)
+                one+=1
+                zero+=1
+            elif nums[one] == 1:
+                one+=1
+            else:
+                self.swap(nums,one,two)
+                two-=1
+                
+
+
+        return nums
+
+        
