@@ -1,0 +1,20 @@
+class Solution:
+    def leaders(self, arr):
+        # code here
+        n=len(arr)
+    
+        greater_ele=arr[n-1]
+        ans=[]
+        ans.append(arr[n-1])
+        
+        for i in range(n-2,-1,-1):
+            if arr[i]>=greater_ele:
+                ans.append(arr[i])
+                greater_ele=arr[i]
+            
+                
+                
+        return ans[::-1]
+                
+            
+            
